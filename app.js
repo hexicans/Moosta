@@ -9,5 +9,9 @@ app.get('/', function (req, res) {
 });
 
 io.on('connection', function (socket) {
-    // wsh
+    console.log('Utilisateur connecté!');
+
+    socket.on('disconnect', function(){
+        io.emit('Utilisateur déconnecté!');
+    });
 });
