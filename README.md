@@ -15,13 +15,13 @@
 - Users list
 - Connection/Register
 
-#### How to install
+### How to install
 ```
 npm install && node app.js
 ```
 
-#### Contribution
+### Contribution
 Feel free to contribute on the cat! To improve or add functionality.
 
-#### License
+### License
 Released under the MIT License. See the bundled *LICENSE* file for details.
