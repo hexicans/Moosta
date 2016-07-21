@@ -1,0 +1,24 @@
+{
+  "name": "moosta",
+  "version": "1.0.0",
+  "description": "chat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gynidark/Moosta.git"
+  },
+  "keywords": [
+    "chat",
+    "express",
+    "jade"
+  ],
+  "author": "Gynidark <gynidark@gmail.com> (http://gynidark.github.io)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gynidark/Moosta/issues"
+  },
+  "homepage": "https://github.com/Gynidark/Moosta#readme"
+}
