@@ -18,8 +18,8 @@
             const timeoutFunction = _ => {
                 isTyping = false;
                 socket.emit("typing", {
-                    "name" : name,
-                    "isTyping" : false
+                    name : name,
+                    isTyping : false
                 });
             }
             
@@ -27,8 +27,8 @@
                 if (isTyping === false && $("#msg").is(":focus")) {
                     isTyping = true;
                     let data = {
-                        "name" : name,
-                        "isTyping" : true
+                        name : name,
+                        isTyping : true
                     };
                     socket.emit("typing", data);
                 } else {
