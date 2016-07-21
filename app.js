@@ -4,14 +4,14 @@ var io = require('socket.io')(server);
 
 server.listen(3000);
 
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
     res.sendfile(__dirname + '/index.html');
 });
 
-io.on('connection', function (socket) {
+io.on('connection', (socket) => {
     console.log('Utilisateur connecté!');
 
-    socket.on('disconnect', function(){
+    socket.on('disconnect', _ => {
         io.emit('Utilisateur déconnecté!');
     });
 });
