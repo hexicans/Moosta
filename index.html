@@ -10,10 +10,10 @@
             let isTyping = false;
             let timeOut = undefined;
             
-            name = window.prompt("enter your name");
+            name = window.prompt("Votre pseudo si vous plait!");
             
             if (name == null)
-                $("body").alert("Veuillez rafraichir la page!");
+                $("body").alert('Veuillez rafraichir la page!');
 
             const timeoutFunction = _ => {
                 isTyping = false;
@@ -24,7 +24,7 @@
             }
             
             const isUserTyping = _ =>{
-                if (isTyping === false && $("#msg").is(":focus")) {
+                if (isTyping === false && $('#msg').is(':focus')) {
                     isTyping = true;
                     let data = {
                         name : name,
@@ -52,7 +52,7 @@
                     .append($('<li>')
                     .append($('<b>')
                         .text(data.name)
-                    .append("<strong>:</strong>")
+                    .append('<strong>:</strong>')
                     .append($('</b>')))
 
                     .append(data.msg));
