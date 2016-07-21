@@ -10,14 +10,14 @@
             let isTyping = false;
             let timeOut = undefined;
             
-            name = window.prompt("Votre pseudo si vous plait!");
+            name = window.prompt('Votre pseudo si vous plait!');
             
             if (name == null)
                 $("body").alert('Veuillez rafraichir la page!');
 
             const timeoutFunction = _ => {
                 isTyping = false;
-                socket.emit("typing", {
+                socket.emit('typing', {
                     name : name,
                     isTyping : false
                 });
@@ -30,7 +30,7 @@
                         name : name,
                         isTyping : true
                     };
-                    socket.emit("typing", data);
+                    socket.emit('typing', data);
                 } else {
                     clearTimeout(timeout);
                     timeout = setTimeout(timeoutFunction, 5000);
