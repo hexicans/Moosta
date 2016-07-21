@@ -1,9 +1,19 @@
 {
-  "name": "chat",
-  "version": "0.0.0",
-  "private": true,
+  "name": "moosta",
+  "description": "This is a simple chat by using NodeJS et SocketIO.",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gynidark/Moosta.git"
+  },
   "dependencies": {
     "express": "^4.10.2",
     "socket.io": "^1.4.8"
-  }
+  },
+  "author": "Gynidark",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gynidark/Moosta/issues"
+  },
+  "homepage": "https://github.com/Gynidark/Moosta#readme"
 }
