@@ -1,4 +1,7 @@
-var app = require('express')();
+var express = require('express');
+var app = express();
+
+var path = require('path');
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
@@ -8,13 +11,17 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
-var users = {};
+app.use(express.static('assets/'));
 
+// list users
+var users = [];
 
 // connexion socket
 io.on('connection', socket => {
+    var socketId = socket.id; 
+
     // console.log('Utilisateur connecté');
-    
+
     socket.on('chatMessage', msg => {
         //console.log('message: ' + msg);
         io.emit('chatMessage', msg);
