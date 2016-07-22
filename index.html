@@ -1,75 +1,11 @@
 <!doctype html>
 <html>
     <head>
-        <title>Socket.IO chat</title>
+        <title>Moosta</title>
 
         <script src="/socket.io/socket.io.js"></script>
         <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-        <script>
-            let socket = io.connect('http://localhost:3000');
-            let isTyping = false;
-            let timeOut = undefined;
-            
-            var name = prompt('Votre pseudo si vous plait', 'Gynidark');    
-            
-            if (name == null)
-                $("body").alert('Veuillez rafraichir la page!');
-            
-            const timeoutFunction = _ => {
-                isTyping = false;
-                socket.emit('typing', {
-                    name : name,
-                    isTyping : false
-                });
-            }
-            
-            const isUserTyping = _ => {
-                if (isTyping === false && $('#msg').is(':focus')) {
-                    isTyping = true;
-                    let data = {
-                        name : name,
-                        isTyping : true
-                    };
-                    socket.emit('typing', data);
-                } else {
-                    clearTimeout(timeout);
-                    timeout = setTimeout(timeoutFunction, 5000);
-                }
-            }
-
-            socket.on('typing', data => {
-                if (data.isTyping) {
-                    $('#status').append("<li id='"+ data.name +"'><small>" + data.name + " est en train d'écrire...</small></li>");
-                    timeout = setTimeout(timeoutFunction, 1500);
-                }
-                else {
-                    $('#' + data.name + '').remove();
-                }
-            });
-
-            socket.on('chatMessage', data => {
-                $('#messages')
-                    .append($('<li>')
-                    .append($('<b>')
-                        .text(data.name)
-                    .append('<strong>:</strong>')
-                    .append($('</b>')))
-                    .append(data.msg));
-            });
-
-            const sendMessage = _ => {
-                socket.emit('chatMessage', {
-                    name: name,
-                    msg: $('#msg').val()
-                });
-                
-                $('#msg').val('');
-            }
-
-            window.onload = () => {
-                $('#user-name').html(name);
-            }
-        </script>
+        <script src="/chat.js"></script>
     </head>
 
     <body>

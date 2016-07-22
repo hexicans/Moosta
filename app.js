@@ -1,16 +1,19 @@
 var express = require('express');
 var app = express();
-
+var port = 3000;
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
-server.listen(3000, function(){
-    console.log('Wesh :: Port:3000');
+
+server.listen(port, function(){
+    console.log('Wesh :: Port:'+ port);
 });
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
+
+app.use(express.static(__dirname + '/public'));
 
 // list users
 var users = [];
