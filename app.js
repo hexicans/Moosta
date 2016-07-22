@@ -8,6 +8,10 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
+var users = {};
+
+
+// connexion socket
 io.on('connection', socket => {
     // console.log('Utilisateur connecté');
     
@@ -18,6 +22,7 @@ io.on('connection', socket => {
 
     socket.on('disconnect', _ => {
         io.emit('Utilisateur déconnecté');
+        
     });
 
     socket.on('typing', data => {

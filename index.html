@@ -14,7 +14,7 @@
             
             if (name == null)
                 $("body").alert('Veuillez rafraichir la page!');
-
+            
             const timeoutFunction = _ => {
                 isTyping = false;
                 socket.emit('typing', {
@@ -54,7 +54,6 @@
                         .text(data.name)
                     .append('<strong>:</strong>')
                     .append($('</b>')))
-
                     .append(data.msg));
             });
 
