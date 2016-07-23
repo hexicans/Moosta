@@ -32,8 +32,4 @@ io.on('connection', socket => {
     socket.on('disconnect', () => {
         //console.log('Utilisateur déconnecté');        
     });
-
-    socket.on('typing', data => {
-        io.emit('typing', data);
-    });
 });

@@ -7,14 +7,6 @@
 
 > This is a simple chat by using NodeJS et SocketIO.
 
-
-### Features
-- Interface
-- Date
-- Scroll last message
-- Users list
-- Connection/Register
-
 ### How to install
 ```
 npm install && node app.js

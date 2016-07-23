@@ -7,28 +7,6 @@ var name = prompt('Votre pseudo si vous plait', 'Gynidark');
 if (name == null)
     $("body").alert('Veuillez rafraichir la page!');
 
-const timeoutFunction = _ => {
-    isTyping = false;
-    socket.emit('typing', {
-        name : name,
-        isTyping : false
-    });
-}
-
-const isUserTyping = _ => {
-    if (isTyping === false && $('#msg').is(':focus')) {
-        isTyping = true;
-        let data = {
-            name : name,
-            isTyping : true
-        };
-        socket.emit('typing', data);
-    } else {
-        clearTimeout(timeout);
-        timeout = setTimeout(timeoutFunction, 5000);
-    }
-}
-
 const sendMessage = _ => {
     var msg = $('#msg').val();
     
@@ -44,16 +22,6 @@ const sendMessage = _ => {
     
     $('#msg').val('');
 }
-
-socket.on('typing', data => {
-    if (data.isTyping) {
-        $('#status').append("<li id='"+ data.name +"'><small>" + data.name + " est en train d'écrire...</small></li>");
-        timeout = setTimeout(timeoutFunction, 1500);
-    }
-    else {
-        $('#' + data.name + '').remove();
-    }
-});
 
 socket.on('chatMessage', data => {
     $('#messages')
