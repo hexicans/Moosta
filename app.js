@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/js'));
 
 // connexion socket
 io.on('connection', socket => {    

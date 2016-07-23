@@ -10,18 +10,18 @@
     </head>
 
     <body>
-    <ul id="users">
-    
-    </ul>
 
-    <div class="chatbox">
-        <div id="chat-header">
-            <div id="user-name"></div>
-            <div id="chat-options"></div>
+        <div class="chatbox">
+            <div id="chat-header">
+                <div id="user-name"></div>
+                <div id="chat-options"></div>
+            </div>
+            
+            <ul id="status"></ul>
+            <ul id="messages" class="bubble"></ul>
         </div>
-        <ul id="status"></ul>
-        <ul id="messages" class="bubble"></ul>
-    </div>
-    <input id="msg" autocomplete="off" onkeypress = "isUserTyping()"/><button id="send" onclick="sendMessage()">Send</button>
+
+        <input id="msg" autocomplete="off" onkeypress = "isUserTyping()"/><button id="send" onclick="sendMessage()">Send</button>
+        
     </body>
 </html>
