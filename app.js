@@ -3,10 +3,10 @@ var app = express();
 var port = 3000;
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-
+var id = Math.round((Math.random() * 1000000));
 
 server.listen(port, function(){
-    console.log('Wesh :: Port:'+ port);
+    console.log('Wesh::port => '+ port);
 });
 
 app.get('/', (req, res) => {
@@ -16,13 +16,13 @@ app.get('/', (req, res) => {
 app.use(express.static(__dirname + '/public'));
 
 // list users
-var users = [];
+const users = [];
 
 // connexion socket
 io.on('connection', socket => {
     var socketId = socket.id;
-
-    console.log('Utilisateur connecté');
+    
+    //console.log('Utilisateur connecté');
 
     socket.on('chatMessage', msg => {
         //console.log('message: ' + msg);
@@ -30,8 +30,7 @@ io.on('connection', socket => {
     });
 
     socket.on('disconnect', () => {
-        console.log('Utilisateur déconnecté');
-        
+        //console.log('Utilisateur déconnecté');        
     });
 
     socket.on('typing', data => {

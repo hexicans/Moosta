@@ -29,6 +29,22 @@ const isUserTyping = _ => {
     }
 }
 
+const sendMessage = _ => {
+    var msg = $('#msg').val();
+    
+    if(!msg.length == 0){
+        socket.emit('chatMessage', {
+            name: name,
+            msg: $('#msg').val()
+        });
+    }else{
+        // error!
+        return false;
+    }
+    
+    $('#msg').val('');
+}
+
 socket.on('typing', data => {
     if (data.isTyping) {
         $('#status').append("<li id='"+ data.name +"'><small>" + data.name + " est en train d'écrire...</small></li>");
@@ -48,15 +64,6 @@ socket.on('chatMessage', data => {
         .append($('</b>')))
         .append(data.msg));
 });
-
-const sendMessage = _ => {
-    socket.emit('chatMessage', {
-        name: name,
-        msg: $('#msg').val()
-    });
-    
-    $('#msg').val('');
-}
 
 $(document).ready(_ => {
     $("#msg").keyup(e => {
