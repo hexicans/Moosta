@@ -15,21 +15,16 @@ app.get('/', (req, res) => {
 
 app.use(express.static(__dirname + '/public'));
 
-// list users
-const users = [];
-
 // connexion socket
-io.on('connection', socket => {
-    var socketId = socket.id;
-    
-    //console.log('Utilisateur connecté');
+io.on('connection', socket => {    
+    console.log('Utilisateur connecté');
 
     socket.on('chatMessage', msg => {
-        //console.log('message: ' + msg);
+        console.log('message: ' + msg);
         io.emit('chatMessage', msg);
     });
 
     socket.on('disconnect', () => {
-        //console.log('Utilisateur déconnecté');        
+        console.log('Utilisateur déconnecté');        
     });
 });
