@@ -1,14 +1,13 @@
-let socket = io.connect('http://localhost:3000');
-let isTyping = false;
-let timeOut = undefined;
+let socket = io.connect('http://localhost:3000')
+let isTyping = false
+let timeOut = undefined
 
-let name = prompt('Votre pseudo si vous plait', 'Gynidark');    
+let name = prompt('Votre pseudo si vous plait', 'Gynidark')
 
-if (name == null)
-    $("body").alert('Veuillez rafraichir la page!');
+if (name == null){ $("body").alert('Veuillez rafraichir la page!') }
 
 const sendMessage = () => {
-    let msg = $('#msg').val();
+    let msg = $('#msg').val()
     
     if(!msg.length == 0){
         socket.emit('chatMessage', {
@@ -17,10 +16,10 @@ const sendMessage = () => {
         });
     }else{
         // error!
-        return false;
+        return false
     }
     
-    $('#msg').val('');
+    $('#msg').val('')
 }
 
 socket.on('chatMessage', data => {
@@ -30,16 +29,14 @@ socket.on('chatMessage', data => {
             .text(data.name)
         .append('<strong>:</strong>')
         .append($('</b>')))
-        .append(data.msg));
+        .append(data.msg))
 });
 
-$(document).ready(_ => {
+$(document).ready(() => {
     $("#msg").keyup(e => {
         if(e.keyCode == 13)
-            sendMessage();
+            sendMessage()
     });
 });
 
-window.onload = () => {
-    $('#user-name').html(name);
-}
+window.onload = () => $('#user-name').html(name)
