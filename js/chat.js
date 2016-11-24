@@ -2,7 +2,7 @@ let socket = io.connect('http://localhost:3000');
 let isTyping = false;
 let timeOut = undefined;
 
-var name = prompt('Votre pseudo si vous plait', 'Gynidark');    
+let name = prompt('Votre pseudo si vous plait', 'Gynidark');    
 
 if (name == null)
     $("body").alert('Veuillez rafraichir la page!');
