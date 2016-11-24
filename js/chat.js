@@ -15,7 +15,6 @@ const sendMessage = () => {
             msg: $('#msg').val()
         });
     }else{
-        // error!
         return false
     }
     
@@ -36,7 +35,7 @@ $(document).ready(() => {
     $("#msg").keyup(e => {
         if(e.keyCode == 13)
             sendMessage()
-    });
-});
+    })
+})
 
 window.onload = () => $('#user-name').html(name)
