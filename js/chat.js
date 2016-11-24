@@ -13,7 +13,7 @@ const sendMessage = () => {
         socket.emit('chatMessage', {
             name: name,
             msg: $('#msg').val()
-        });
+        })
     }else{
         return false
     }
@@ -29,7 +29,7 @@ socket.on('chatMessage', data => {
         .append('<strong>:</strong>')
         .append($('</b>')))
         .append(data.msg))
-});
+})
 
 $(document).ready(() => {
     $("#msg").keyup(e => {
