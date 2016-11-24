@@ -7,8 +7,8 @@ var name = prompt('Votre pseudo si vous plait', 'Gynidark');
 if (name == null)
     $("body").alert('Veuillez rafraichir la page!');
 
-const sendMessage = _ => {
-    var msg = $('#msg').val();
+const sendMessage = () => {
+    let msg = $('#msg').val();
     
     if(!msg.length == 0){
         socket.emit('chatMessage', {
