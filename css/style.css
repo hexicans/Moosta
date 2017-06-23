@@ -76,3 +76,12 @@ section#tchat .form #btn-msg{
 	bottom: 0;
 	right: 0;
 }
+
+#messages li{
+	padding: 10px;
+	color: #7c82a7;
+	word-wrap: break-word;
+}
+#messages span{
+	color: #ff79c6;
+}
