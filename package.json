@@ -27,5 +27,12 @@
   "bugs": {
     "url": "https://github.com/Gynidark/Moosta/issues",
     "email": "gynidark@gmail.com"
+  },
+  "dependencies": {
+    "expressjs": "^1.0.1",
+    "socketio": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
