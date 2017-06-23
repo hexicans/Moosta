@@ -1,41 +1,43 @@
-let socket = io.connect('http://localhost:3000')
-let isTyping = false
-let timeOut = undefined
+const socket = io.connect('http://localhost:3000')
+const user = { name, status }
+let   isLogged = false
 
-let name = prompt('Votre pseudo si vous plait', 'Gynidark')
+// login user.
+const loginUser = () => {
+	const btn = $('#btn-login')
 
-if (name == null){ $("body").alert('Veuillez rafraichir la page!') }
+	btn.click(() => {
+		const input = $('#input-login').val()
 
-const sendMessage = () => {
-    let msg = $('#msg').val()
-    
-    if(!msg.length == 0){
-        socket.emit('chatMessage', {
-            name: name,
-            msg: $('#msg').val()
-        })
-    }else{
-        return false
-    }
-    
-    $('#msg').val('')
+		if(!input.length == 0){
+			user.name = input
+
+			$('section#login').hide()
+			$('section#tchat').show()
+		}
+	})
 }
 
-socket.on('chatMessage', data => {
-    $('#messages')
-        .append($('<li>')
-        .append($('<b>')
-            .text(data.name)
-        .append('<strong>:</strong>')
-        .append($('</b>')))
-        .append(data.msg))
-})
+// send message.
+const sendMessage = () => {
+	const btn = $('#btn-msg')
 
-$(document).ready(() => {
-    $("#msg").keyup(e => {
-        if(e.keyCode == 13)
-            sendMessage()
-    })
-})
+	btn.click(() => {
+		const input = $('#input-msg').val()
 
-window.onload = () => $('#user-name').html(name)
+		if (!input.length == 0) {
+			socket.emit('chatMessage', {
+				username: user.name,
+				message: input
+			})
+		}
+	})
+}
+
+// show messages
+socket.on('chatMessage', data =>
+	$('#messages').append(`<li><span>${data.username}</span> : ${data.message}</li>`)
+)
+
+loginUser()
+sendMessage()

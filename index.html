@@ -2,25 +2,32 @@
 <html>
     <head>
         <title>Moosta</title>
-
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-        <script src="/chat.js"></script>
+    
+        <style>
+            section#tchat{ display: none }
+        </style>
     </head>
 
     <body>
 
-        <div class="chatbox">
-            <div id="chat-header">
-                <div id="user-name"></div>
-                <div id="chat-options"></div>
-            </div>
-            
-            <ul id="status"></ul>
-            <ul id="messages" class="bubble"></ul>
-        </div>
-
-        <input id="msg" autocomplete="off" onkeypress = "isUserTyping()"/><button id="send" onclick="sendMessage()">Send</button>
+        <!-- Login User -->
+        <section id="login">
+            <input id="input-login" type="text">
+            <input id="btn-login" type="submit" value="Se connecter">
+        </section>
         
+        <!-- Section Tchat -->
+        <section id="tchat">
+            <ul id="messages"></ul>
+            
+            <div class="form">
+                <input id="input-msg" type="text">
+                <input id="btn-msg" type="submit" value="Envoyer">
+            </div>
+        </section>
+    
+        <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/chat.js"></script>
     </body>
 </html>
