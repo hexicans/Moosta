@@ -30,6 +30,8 @@ const sendMessage = () => {
 				username: user.name,
 				message: input
 			})
+
+			$('#input-msg').val('')
 		}
 	})
 }
