@@ -15,7 +15,6 @@ app.get('/', (req, res) => {
 
 app.use(express.static(__dirname + '/js'))
 
-
 io.on('connection', socket => {    
     console.log('Utilisateur connecté')
 

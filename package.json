@@ -1,19 +1,31 @@
 {
-  "name": "moosta",
-  "description": "This is a simple chat by using NodeJS et SocketIO.",
-  "version": "1.0.0",
+  "name": "Moosta",
+  "version": "0.0.3",
+  "homepage": "https://github.com/Gynidark/Moosta#readme",
+  "description": "Un simple chat réalisé avec NodeJS et SocketIO",
+  "keywords": [
+    "nodejs",
+    "chat",
+    "javascript"
+  ],
+  "license": "MIT",
+  "main": "app.js",
+  "engines": {
+    "node": ">= 6.4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Gynidark/Moosta.git"
   },
-  "dependencies": {
-    "express": "^4.10.2",
-    "socket.io": "^1.4.8"
+  "author": {
+    "name": "Brandon Sueur",
+    "email": "gynidark@gmail.com"
   },
-  "author": "Gynidark",
-  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Gynidark/Moosta/issues"
-  },
-  "homepage": "https://github.com/Gynidark/Moosta#readme"
+    "url": "https://github.com/Gynidark/Moosta/issues",
+    "email": "gynidark@gmail.com"
+  }
 }
