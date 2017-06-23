@@ -8,14 +8,13 @@
 
 body, html{
 	height: 100%;
-	background: #44475a;
+	background: #282a36;
 }
 
 /* section */
 section#tchat{ display: none }
 
 section#login{
-	background: #282a36;
 	height: 100%;
 	display: flex;
 	align-items: center;
@@ -45,4 +44,35 @@ section#login input#btn-login{
 	outline: none;
 	width: 100%;
 	display: block;
+}
+
+section#tchat .form{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+section#tchat .form #input-msg{
+	background: #44475a;
+	width: 100%;
+	border: 0;
+	padding: 8px;
+	font-size: 14px;
+	font-weight: 400;
+	outline: none;
+	color: #fff;
+}
+
+section#tchat .form #btn-msg{
+	background: #bd93f9;
+	border: 0;
+	padding: 7.4px;
+	cursor: pointer;
+	font-weight: 400;
+	font-size: 15px;
+	color: #fff;
+	outline: none;
+	position: absolute;
+	bottom: 0;
+	right: 0;
 }
