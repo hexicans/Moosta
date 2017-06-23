@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600');
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Montserrat', sans-serif!important;
+}
+
+body, html{
+	height: 100%;
+	background: #44475a;
+}
+
+/* section */
+section#tchat{ display: none }
+
+section#login{
+	background: #282a36;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+section#login input#input-login{
+	background: #44475a;
+	border: 0;
+	padding: 10px;
+	font-weight: 400;
+	font-size: 15px;
+	color: #fff;
+	outline: none;
+	width: 20em;
+	display: block;
+}
+
+section#login input#btn-login{
+	background: #bd93f9;
+	border: 0;
+	padding: 10px;
+	cursor: pointer;
+	font-weight: 400;
+	font-size: 15px;
+	color: #fff;
+	outline: none;
+	width: 100%;
+	display: block;
+}
