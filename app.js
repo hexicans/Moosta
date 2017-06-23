@@ -6,7 +6,7 @@ var io = require('socket.io')(server)
 var id = Math.round((Math.random() * 1000000))
 
 server.listen(port, function(){
-    console.log('Wesh::port => '+ port)
+    console.log('Serveur bien démarré avec le port : '+ port)
 })
 
 app.get('/', (req, res) => {
