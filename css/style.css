@@ -22,60 +22,69 @@ section#login{
 }
 
 section#login input#input-login{
-	background: #44475a;
+	display: block;
+	width: 20em;
 	border: 0;
 	padding: 10px;
+	
+	background: #44475a;
+	color: #fff;
+	
 	font-weight: 400;
 	font-size: 15px;
-	color: #fff;
 	outline: none;
-	width: 20em;
-	display: block;
 }
 
 section#login input#btn-login{
-	background: #bd93f9;
+	display: block;
+	width: 100%;
 	border: 0;
 	padding: 10px;
 	cursor: pointer;
+	
+	background: #bd93f9;
+	color: #fff;
+	
 	font-weight: 400;
 	font-size: 15px;
-	color: #fff;
 	outline: none;
-	width: 100%;
-	display: block;
 }
 
 section#tchat .form{
 	position: fixed;
-	bottom: 0;
 	width: 100%;
+	bottom: 0;
 }
 
 section#tchat .form #input-msg{
-	background: #44475a;
 	width: 100%;
 	border: 0;
 	padding: 8px;
+	
+	background: #44475a;
+	color: #fff;
+	
 	font-size: 14px;
 	font-weight: 400;
 	outline: none;
-	color: #fff;
 }
 
 section#tchat .form #btn-msg{
-	background: #bd93f9;
-	border: 0;
-	padding: 7.4px;
-	cursor: pointer;
-	font-weight: 400;
-	font-size: 15px;
-	color: #fff;
-	outline: none;
 	position: absolute;
+	padding: 7.4px;
+	border: 0;
+	width: 16em;
+	cursor: pointer;
 	bottom: 0;
 	right: 0;
-	width: 16em;
+	
+	background: #bd93f9;
+	color: #fff;
+	
+	
+	font-weight: 400;
+	font-size: 15px;
+	outline: none;
 }
 
 #messages li{
@@ -86,28 +95,31 @@ section#tchat .form #btn-msg{
 #messages span{	color: #ff79c6; }
 
 #users{
-    background: #1e2027;
     width: 15em;
+	height: 100%;
     position: fixed;
-    height: 100%;
     right: 0;
+	
+	background: #1e2027;
 }
 
 #users li:first-child{ margin-top: 40px; }
 #users li{
 	list-style: none;
     margin: 10px 30px 10px;
+	
     color: #6272a4;
-}
-
-.status{
-	margin-right: 10px; 
-	display: inline-block;
-    width: 12px;
-    height: 12px;
-    background-color: #50fa7b;
-    border-radius: 50%;
 }
 
 .status-orange{ background-color: #ffb86c; }
 .status-vert{ background-color: #50fa7b; }
+.status{
+	display: inline-block;
+	width: 12px;
+    height: 12px;
+	margin-right: 10px;
+	border-radius: 50%;
+	
+    background-color: #50fa7b;
+}
+
