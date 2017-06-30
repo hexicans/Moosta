@@ -36,12 +36,11 @@ io.on('connection', socket => {
     socket.on('chatMessage', msg => io.emit('chatMessage', msg))
 
     socket.on('disconnect', () => {
-    	console.log('Utilisateur déconnecté')
-
 		if(!me) return false
 
 		delete users[me.id]
 
+		console.log('Utilisateur déconnecté')
 		io.sockets.emit('disconnectUser', me)
 	})
 })
