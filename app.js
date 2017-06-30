@@ -16,11 +16,11 @@ app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'))
 
 // socket.io
 io.on('connection', socket => {    
-	var me
+	let me
 
     console.log('Utilisateur connecté')
 
-	for(var k in users) socket.emit('newUser', users[k])
+	for(let k in users) socket.emit('newUser', users[k])
 
 	socket.on('login', user => {
 		me = user
