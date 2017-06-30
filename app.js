@@ -31,8 +31,6 @@ io.on('connection', socket => {
 		users[me.id] = me
 
 		io.emit('newUser', me)
-		console.log(me)
-		console.log(users)
 	})
 
     socket.on('chatMessage', msg => io.emit('chatMessage', msg))
