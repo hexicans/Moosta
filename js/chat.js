@@ -1,5 +1,6 @@
 const socket = io.connect('http://localhost:3000')
 const user = { name, status }
+const users = {}
 let   isLogged = false
 
 // login user.
@@ -11,6 +12,10 @@ const loginUser = () => {
 
 		if(!input.length == 0){
 			user.name = input
+
+			socket.emit('login', {
+				username : user.name
+			})
 
 			$('section#login').hide()
 			$('section#tchat').show()
@@ -36,10 +41,9 @@ const sendMessage = () => {
 	})
 }
 
-// show messages
-socket.on('chatMessage', data =>
-	$('#messages').append(`<li><span>${data.username}</span> : ${data.message}</li>`)
-)
+socket.on('chatMessage', data => $('#messages').append(`<li><span>${data.username}</span> : ${data.message}</li>`))
+socket.on('newUser', user => $('#users').append(`<li id="user-${user.id}"><span class="status"></span> ${user.username}</li>`))
+socket.on('disconnectUser', user => $('li#user-' + user.id).remove())
 
 loginUser()
 sendMessage()
