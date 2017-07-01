@@ -92,6 +92,11 @@ section#tchat .form #btn-msg{
 	color: #7c82a7;
 	word-wrap: break-word;
 }
+#messages .info{
+	color: #44475a;
+    font-style: italic;
+}
+#messages .info span{}
 #messages span{	color: #ff79c6; }
 
 #users{
