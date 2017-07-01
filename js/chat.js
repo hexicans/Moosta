@@ -46,6 +46,7 @@ socket.on('chatMessage', data => $('#messages').append(`<li><span>${data.usernam
 socket.on('newUser', user => {
 	$('#messages').append(`<li class="info">${user.username} viens de se connecter.</li>`)
 	$('#users').append(`<li id="user-${user.id}"><span class="status"></span> ${user.username}</li>`)
+	$('#messages').html('')
 })
 
 socket.on('disconnectUser', user => {
