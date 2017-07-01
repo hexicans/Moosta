@@ -5,8 +5,6 @@ const server = require('http').Server(app)
 const io = require('socket.io')(server)
 const users = []
 
-console.log(users)
-
 // paths assets
 app.use(express.static(__dirname + '/js'))
 app.use(express.static(__dirname + '/css'))
