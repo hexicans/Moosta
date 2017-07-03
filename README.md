@@ -20,3 +20,8 @@ npm install && node app.js
 
 ### License
 Released under the MIT License. See the bundled *LICENSE* file for details.
+
+______
+<p align="center">
+   <img height="150" alt="Réalisé par Gynidark" src="https://img4.hostingpics.net/pics/417297bygynidark.png">
+</p>
