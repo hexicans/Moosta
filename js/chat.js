@@ -45,16 +45,16 @@ const sendMessage = () => {
 
 const actionsSocket = () => {
 	socket.on('chatMessage', data =>
-		$('#messages').append(`<li><span>${data.username}</span> : ${data.message}</li>`)
+		createElement.newMessage(data.username, data.message)
 	)
 
 	socket.on('newUser', user => {
-		$('#messages').append(`<li class="info">${user.username} viens de se connecter.</li>`)
-		$('#users').append(`<li id="user-${user.id}"><span class="status"></span> ${user.username}</li>`)
+		createElement.newUser(user.username)
+		createElement.addUserList(user.id, user.username)
 	})
 
 	socket.on('disconnectUser', user => {
-		$('#messages').append(`<li class="info">${user.username} viens de se déconnecter.</li>`)
+		createElement.logoutUser(user.username)
 		$('li#user-' + user.id).remove()
 	})
 }
