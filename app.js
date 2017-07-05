@@ -16,10 +16,9 @@ app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'))
 io.on('connection', socket => {    
 	let me
 
-    console.log('Utilisateur connecté')
-
 	for(let k in users) socket.emit('newUser', users[k])
 
+	// Login user
 	socket.on('login', user => {
 		me = user
 
@@ -31,17 +30,18 @@ io.on('connection', socket => {
 		io.emit('newUser', me)
 	})
 
+	// New message
     socket.on('chatMessage', msg => io.emit('chatMessage', msg))
 
+	// Disconnect user
     socket.on('disconnect', () => {
 		if(!me) return false
 
 		delete users[me.id]
 
-		console.log('Utilisateur déconnecté')
 		io.sockets.emit('disconnectUser', me)
 	})
 })
 
 // server
-server.listen(port, () => console.log('Serveur bien démarré avec le port : ' + port))
+server.listen(port, () => console.log('Server good width the port : ' + port))
