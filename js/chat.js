@@ -43,17 +43,22 @@ const sendMessage = () => {
 	})
 }
 
-socket.on('chatMessage', data => $('#messages').append(`<li><span>${data.username}</span> : ${data.message}</li>`))
+const actionsSocket = () => {
+	socket.on('chatMessage', data =>
+		$('#messages').append(`<li><span>${data.username}</span> : ${data.message}</li>`)
+	)
 
-socket.on('newUser', user => {
-	$('#messages').append(`<li class="info">${user.username} viens de se connecter.</li>`)
-	$('#users').append(`<li id="user-${user.id}"><span class="status"></span> ${user.username}</li>`)
-})
+	socket.on('newUser', user => {
+		$('#messages').append(`<li class="info">${user.username} viens de se connecter.</li>`)
+		$('#users').append(`<li id="user-${user.id}"><span class="status"></span> ${user.username}</li>`)
+	})
 
-socket.on('disconnectUser', user => {
-	$('#messages').append(`<li class="info">${user.username} viens de se déconnecter.</li>`)
-	$('li#user-' + user.id).remove()
-})
+	socket.on('disconnectUser', user => {
+		$('#messages').append(`<li class="info">${user.username} viens de se déconnecter.</li>`)
+		$('li#user-' + user.id).remove()
+	})
+}
 
 loginUser()
 sendMessage()
+actionsSocket()
