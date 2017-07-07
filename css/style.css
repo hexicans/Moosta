@@ -1,113 +1,113 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600');
 
 *{
-	margin: 0;
-	padding: 0;
-	font-family: 'Montserrat', sans-serif!important;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif!important;
 }
 
 body, html{
-	height: 100%;
-	background: #282a36;
+    height: 100%;
+    background: #282a36;
 }
 
 /* section */
 section#tchat{ display: none }
 
 section#login{
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 section#login input#input-login{
-	display: block;
-	width: 20em;
-	border: 0;
-	padding: 10px;
-	
-	background: #44475a;
-	color: #fff;
-	
-	font-weight: 400;
-	font-size: 15px;
-	outline: none;
+    display: block;
+    width: 20em;
+    border: 0;
+    padding: 10px;
+    
+    background: #44475a;
+    color: #fff;
+    
+    font-weight: 400;
+    font-size: 15px;
+    outline: none;
 }
 
 section#login h1{
-	position: absolute;
-	margin-top: -0.7em;
-	font-size: 6em;
-	z-index: 30;
-	font-weight: 500;
-	color: rgba(48, 54, 79, 0.44);
-	letter-spacing: 5px;
+    position: absolute;
+    margin-top: -0.7em;
+    font-size: 6em;
+    z-index: 30;
+    font-weight: 500;
+    color: rgba(48, 54, 79, 0.44);
+    letter-spacing: 5px;
 }
 
 section#login .form-login{
-	z-index: 60;
+    z-index: 60;
 }
 
 section#login input#btn-login{
-	display: block;
-	width: 100%;
-	border: 0;
-	padding: 10px;
-	cursor: pointer;
-	
-	background: #bd93f9;
-	color: #fff;
-	
-	font-weight: 400;
-	font-size: 15px;
-	outline: none;
+    display: block;
+    width: 100%;
+    border: 0;
+    padding: 10px;
+    cursor: pointer;
+    
+    background: #bd93f9;
+    color: #fff;
+    
+    font-weight: 400;
+    font-size: 15px;
+    outline: none;
 }
 
 section#tchat .form{
-	position: fixed;
-	width: 100%;
-	bottom: 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
 section#tchat .form #input-msg{
-	width: 100%;
-	border: 0;
-	padding: 8px;
-	
-	background: #44475a;
-	color: #fff;
-	
-	font-size: 14px;
-	font-weight: 400;
-	outline: none;
+    width: 100%;
+    border: 0;
+    padding: 8px;
+    
+    background: #44475a;
+    color: #fff;
+    
+    font-size: 14px;
+    font-weight: 400;
+    outline: none;
 }
 
 section#tchat .form #btn-msg{
-	position: absolute;
-	padding: 7.4px;
-	border: 0;
-	width: 16em;
-	cursor: pointer;
-	bottom: 0;
-	right: 0;
-	
-	background: #bd93f9;
-	color: #fff;
-	
-	
-	font-weight: 400;
-	font-size: 15px;
-	outline: none;
+    position: absolute;
+    padding: 7.4px;
+    border: 0;
+    width: 16em;
+    cursor: pointer;
+    bottom: 0;
+    right: 0;
+    
+    background: #bd93f9;
+    color: #fff;
+    
+    
+    font-weight: 400;
+    font-size: 15px;
+    outline: none;
 }
 
 #messages li{
-	padding: 10px;
-	color: #7c82a7;
-	word-wrap: break-word;
+    padding: 10px;
+    color: #7c82a7;
+    word-wrap: break-word;
 }
 #messages .info{
-	color: #44475a;
+    color: #44475a;
     font-style: italic;
 }
 #messages .info span{}
@@ -117,30 +117,30 @@ section#tchat .form #btn-msg{
 
 #users{
     width: 15em;
-	height: 100%;
+    height: 100%;
     position: fixed;
     right: 0;
-	
-	background: #1e2027;
+    
+    background: #1e2027;
 }
 
 #users li:first-child{ margin-top: 40px; }
 #users li{
-	list-style: none;
+    list-style: none;
     margin: 10px 30px 10px;
-	
+    
     color: #6272a4;
 }
 
 .status-orange{ background-color: #ffb86c; }
 .status-vert{ background-color: #50fa7b; }
 .status{
-	display: inline-block;
-	width: 12px;
+    display: inline-block;
+    width: 12px;
     height: 12px;
-	margin-right: 10px;
-	border-radius: 50%;
-	
+    margin-right: 10px;
+    border-radius: 50%;
+    
     background-color: #50fa7b;
 }
 

@@ -14,33 +14,33 @@ app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'))
 
 // socket.io
 io.on('connection', socket => {    
-	let me
+    let me
 
-	for(let k in users) socket.emit('newUser', users[k])
+    for(let k in users) socket.emit('newUser', users[k])
 
-	// Login user
-	socket.on('login', user => {
-		me = user
+    // Login user
+    socket.on('login', user => {
+        me = user
 
-		me.id = Math.round((Math.random() * 1000000))
-		me.name = user.username
+        me.id = Math.round((Math.random() * 1000000))
+        me.name = user.username
 
-		users[me.id] = me
+        users[me.id] = me
 
-		io.emit('newUser', me)
-	})
+        io.emit('newUser', me)
+    })
 
-	// New message
+    // New message
     socket.on('chatMessage', msg => io.emit('chatMessage', msg))
 
-	// Disconnect user
+    // Disconnect user
     socket.on('disconnect', () => {
-		if(!me) return false
+        if(!me) return false
 
-		delete users[me.id]
+        delete users[me.id]
 
-		io.sockets.emit('disconnectUser', me)
-	})
+        io.sockets.emit('disconnectUser', me)
+    })
 })
 
 // server
