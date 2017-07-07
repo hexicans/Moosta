@@ -33,8 +33,8 @@ const createElement = {
 	 * @example createElement.newMessage(data.username, data.message)
 	 * @return {String} The message send
 	 */
-	newMessage : (username, message) => {
-		$('#messages').append(`<li><span>${username}</span> : ${message}</li>`)
+	newMessage : (username, date, message) => {
+		$('#messages').append(`<li><span class="username">${username}</span> [ <span class="date">${date}</span> ] : ${message}</li>`)
 	},
 
 	/**

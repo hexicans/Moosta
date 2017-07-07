@@ -37,6 +37,7 @@ const sendMessage = () => {
 			// So, i send a message
 			socket.emit('chatMessage', {
 				username: user.name,
+				date : new Date().toString().split(" ")[4],
 				message: input
 			})
 
@@ -49,7 +50,7 @@ const sendMessage = () => {
 const actionsSocket = () => {
 	// New message
 	socket.on('chatMessage', data =>
-		createElement.newMessage(data.username, data.message)
+		createElement.newMessage(data.username, data.date, data.message)
 	)
 	// New user
 	socket.on('newUser', user => {

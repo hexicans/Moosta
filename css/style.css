@@ -111,7 +111,9 @@ section#tchat .form #btn-msg{
     font-style: italic;
 }
 #messages .info span{}
-#messages span{	color: #ff79c6; }
+
+#messages li span.username{ color: #ff79c6 }
+#messages li span.date{ color: #f1fa8c }
 
 #users{
     width: 15em;
