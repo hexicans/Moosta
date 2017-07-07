@@ -1,6 +1,6 @@
 {
   "name": "moosta",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://github.com/Gynidark/Moosta#readme",
   "description": "Un simple chat réalisé avec NodeJS et SocketIO",
   "keywords": [
