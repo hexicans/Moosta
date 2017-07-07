@@ -35,6 +35,20 @@ section#login input#input-login{
 	outline: none;
 }
 
+section#login h1{
+	position: absolute;
+	margin-top: -0.7em;
+	font-size: 6em;
+	z-index: 30;
+	font-weight: 500;
+	color: rgba(48, 54, 79, 0.44);
+	letter-spacing: 5px;
+}
+
+section#login .form-login{
+	z-index: 60;
+}
+
 section#login input#btn-login{
 	display: block;
 	width: 100%;
