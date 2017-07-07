@@ -34,7 +34,7 @@ const createElement = {
      * @return {String} The message send
      */
     newMessage : (username, date, message) => {
-        $('#messages').append(`<li><span class="username">${username}</span> [ <span class="date">${date}</span> ] : ${message}</li>`)
+        $('#messages').append(`<li>[ <span class="date">${date}</span> ] <span class="username">${username}</span> : ${message}</li>`)
     },
 
     /**
