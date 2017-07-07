@@ -47,26 +47,23 @@ const sendMessage = () => {
 	})
 }
 
-const actionsSocket = () => {
-	// New message
-	socket.on('chatMessage', data =>
-		createElement.newMessage(data.username, data.date, data.message)
-	)
-	// New user
-	socket.on('newUser', user => {
-		createElement.newUser(user.username)
-		createElement.addUserList(user.id, user.username)
-	})
+// New message
+socket.on('chatMessage', data =>
+	createElement.newMessage(data.username, data.date, data.message)
+)
+// New user
+socket.on('newUser', user => {
+	createElement.newUser(user.username)
+	createElement.addUserList(user.id, user.username)
+})
 
-	// Disconnect user
-	socket.on('disconnectUser', user => {
-		createElement.logoutUser(user.username)
+// Disconnect user
+socket.on('disconnectUser', user => {
+	createElement.logoutUser(user.username)
 
-		// Removing the user from the sidebar.
-		$('li#user-' + user.id).remove()
-	})
-}
+	// Removing the user from the sidebar.
+	$('li#user-' + user.id).remove()
+})
 
 loginUser()
 sendMessage()
-actionsSocket()
