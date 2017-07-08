@@ -9,7 +9,7 @@ const loginUser = () => {
         const input = $('#input-login').val()
 
         // If the field is different from empty
-        if(!input.length == 0){
+        if(input.length > 3 && input.length < 17){
             user.name = input
 
             // So, i connect the user
