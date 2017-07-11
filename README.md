@@ -17,7 +17,7 @@ npm install && node app.js
 ### Screenshots
 #### Login
 ![Login](https://img4.hostingpics.net/pics/398474tlchargement2.png)
-#### Tchat
+#### Chat
 ![Tchat](https://img4.hostingpics.net/pics/329095tlchargement3.png)
 
 ### License
