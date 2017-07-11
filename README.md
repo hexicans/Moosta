@@ -14,7 +14,7 @@
 npm install && node app.js
 ```
 
-### Screenhots
+### Screenshots
 #### Login
 ![Login](https://img4.hostingpics.net/pics/398474tlchargement2.png)
 #### Tchat
